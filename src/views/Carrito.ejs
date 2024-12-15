@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include('partials/Styles') %>
+    <script src="/scripts/vista.js" defer></script>
+</head>
+<body>
+    <!-- Incluir el menú de navegación desde la carpeta partials -->
+    <%- include('partials/navigation') %>
+
+    <!-- Video de fondo -->
+    <video id="fondo-video" autoplay muted loop>
+        <source src="/video/Nike_Jordan_1_Comercial.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+
+    <!-- Contenido del carrito -->
+    <main>
+        <section id="carrito" class="section">
+            <h2>Carrito de Compras</h2>
+            <div class="carrito-contenido">
+                <!-- Aquí se cargará dinámicamente el contenido del carrito -->
+                <!-- El contenido se manejará a través de JavaScript -->
+            </div>
+        </section>
+        <!-- Botón de ejemplo para agregar un producto (esto es opcional) -->
+        <button id="agregar-producto" onclick="agregarProducto({nombre: 'Tenis Nike', precio: 100})">
+            Agregar Tenis Nike al Carrito
+        </button>
+    </main>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

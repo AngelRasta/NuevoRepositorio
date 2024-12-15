@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include('partials/Styles') %>
+
+</head>
+<body>
+    <!-- Incluir el menú de navegación desde la carpeta partials -->
+    <%- include('partials/navigation') %>
+
+    <!-- Video de fondo -->
+    <video id="fondo-video" autoplay muted loop>
+        <%- include('partials/navigation') %>
+        Tu navegador no soporta el video.
+    </video>
+
+    <!-- Contenedor para cargar las páginas -->
+    <iframe id="contenido" src="/pages/index.html"></iframe>
+
+    <script>
+        // Función para cargar la página en el iframe
+        function cargarPagina(pagina) {
+            document.getElementById('contenido').src = `/pages/${pagina}`;
+        }
+    </script>
+    <%- include('partials/footer') %>
+</body>
+</html>

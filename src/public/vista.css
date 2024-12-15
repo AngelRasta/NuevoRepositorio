@@ -1,0 +1,216 @@
+/* Vista.css */
+
+/* Estilos generales */
+body {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto en gris claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos de los encabezados */
+h1, h2, h3 {
+    color: #d4a373; /* Color café elegante */
+    text-align: center;
+}
+
+/* Estilos de las secciones */
+.section {
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Menú de Navegación */
+header {
+    width: 100%;
+    background-color: #333; /* Fondo gris oscuro para el menú */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    background-color: #444;
+    border-radius: 8px;
+    box-shadow: 0 4px #333; /* Efecto de botón 3D */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    box-shadow: 0 2px #222; /* Efecto al presionar */
+    transform: scale(1.1); /* Agranda ligeramente el botón */
+}
+
+/* Submenús desplegables */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    list-style: none;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    background-color: #444;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.submenu li a:hover {
+    background-color: #555;
+}
+
+/* Botones dentro de las secciones */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px #333; /* Efecto 3D */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    box-shadow: 0 2px #222;
+}
+
+/* Estilos específicos para la sección de productos */
+.categoria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.producto {
+    margin: 10px;
+    background-color: #444;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: calc(33% - 20px);
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Carrusel y galería lateral */
+.carrusel, .galeria-lateral {
+    padding: 20px;
+    background-color: #444;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+/* Estilos de Carrito */
+.carrito-contenido {
+    padding: 15px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    color: #e0e0e0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.carrito-contenido p {
+    font-size: 18px;
+}
+
+.carrito-contenido button {
+    margin: 5px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
+.carrito-contenido button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el video de fondo */
+#fondo-video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Efectos del menú de navegación */
+nav ul li a {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    transform: scale(1.1);  /* Agranda ligeramente el botón */
+}
+
+/* Estilo para el contenedor del menú de navegación */
+nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
+}

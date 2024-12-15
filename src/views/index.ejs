@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include('partials/Styles') %>
+
+    <script src="/scripts/vista.js" defer></script>
+</head>
+<body>
+    <!-- Incluir el menú de navegación desde la carpeta partials -->
+    <%- include('partials/navigation') %>
+
+    <!-- Video de fondo -->
+    <video id="fondo-video" autoplay muted loop>
+        <%- include('partials/navigation') %>
+        Tu navegador no soporta el video.
+    </video>
+
+    <!-- Contenido de la página de inicio -->
+    <section id="inicio" class="section">
+        <h1>Bienvenidos a la Tienda de Tenis Elegante</h1>
+        <p>Descubre nuestros productos de la mejor calidad y estilo.</p>
+    </section>
+
+    <!-- Sección de carrito de compras -->
+    <section id="carrito" class="section">
+        <h2>Carrito de Compras</h2>
+        <div class="carrito-contenido">
+            <!-- El contenido del carrito se cargará dinámicamente aquí -->
+        </div>
+    </section>
+
+    <!-- Ejemplo de producto para agregar al carrito -->
+    <button id="agregar-producto" onclick="agregarProducto({nombre: 'Tenis Nike', precio: 100})">
+        Agregar Tenis Nike al Carrito
+    </button>
+    <%- include('partials/footer') %>
+</body>
+</html>

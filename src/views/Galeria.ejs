@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include('partials/Styles') %>
+
+    <script src="/scripts/vista.js" defer></script>
+</head>
+<body>
+    <!-- Incluir el menú de navegación desde la carpeta partials -->
+    <%- include('partials/navigation') %>
+
+    <!-- Video de fondo -->
+    <video id="fondo-video" autoplay muted loop>
+        <source src="/videos/Nike_Jordan_1_Comercial.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+
+    <!-- Contenido de la galería -->
+    <section class="galeria-lateral">
+        <h2>Galería de Productos</h2>
+        <!-- Aquí puedes agregar imágenes de tus productos -->
+        <div>
+            <img src="/images/producto1.jpg" alt="Producto 1">
+        </div>
+        <div>
+            <img src="/images/producto2.jpg" alt="Producto 2">
+        </div>
+        <!-- Más imágenes -->
+    </section>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>
