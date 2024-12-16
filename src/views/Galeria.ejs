@@ -6,6 +6,21 @@
     <title><%= title %></title>
     <%- include('partials/Styles') %>
 
+    <!-- Importar CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Animación para el efecto de despliegue */
+        .info-overlay {
+            opacity: 0; /* Oculto por defecto */
+            transition: opacity 0.5s ease; /* Transición desvanecida */
+        }
+
+        .image-container:hover .info-overlay {
+            opacity: 1; /* Mostrar información al pasar el cursor */
+        }
+    </style>
+
     <script src="/scripts/vista.js" defer></script>
 </head>
 <body>
@@ -20,19 +35,87 @@
         Tu navegador no soporta el video.
     </video>
 
-    <!-- Contenido de la galería -->
-    <section class="galeria-lateral">
-        <h2>Galería de Productos</h2>
-        <!-- Aquí puedes agregar imágenes de tus productos -->
-        <div>
-            <img src="/images/producto1.jpg" alt="Producto 1">
+    <!-- Título y Carrusel -->
+    <section class="container text-center mt-5">
+        <h2 class="text-light">Datos curiosos del mundo del sneaker</h2>
+        <div id="sneakerCarousel" class="carousel slide mt-3" data-bs-ride="carousel">
+            <!-- Indicadores del carrusel -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#sneakerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#sneakerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#sneakerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#sneakerCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#sneakerCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#sneakerCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+
+            <!-- Imágenes del carrusel con información desplegable -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="image-container position-relative">
+                        <img src="/images/sneaker1.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 1">
+                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                            <p>Dato curioso sobre Sneaker 1: Este modelo rompió récords de ventas en 2022.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container position-relative">
+                        <img src="/images/sneaker2.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 2">
+                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                            <p>Dato curioso sobre Sneaker 2: Inspirado en los años 80.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container position-relative">
+                        <img src="/images/sneaker3.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 3">
+                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                            <p>Dato curioso sobre Sneaker 3: Popular entre atletas profesionales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container position-relative">
+                        <img src="/images/sneaker4.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 4">
+                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                            <p>Dato curioso sobre Sneaker 4: Usado en una película famosa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container position-relative">
+                        <img src="/images/sneaker5.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 5">
+                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                            <p>Dato curioso sobre Sneaker 5: Edición limitada de solo 100 pares.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-container position-relative">
+                        <img src="/images/sneaker6.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 6">
+                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                            <p>Dato curioso sobre Sneaker 6: Fabricado con materiales reciclados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#sneakerCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sneakerCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
         </div>
-        <div>
-            <img src="/images/producto2.jpg" alt="Producto 2">
-        </div>
-        <!-- Más imágenes -->
     </section>
 
-    <%- include('partials/footer') %>
+     <%- include('partials/footer') %>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
