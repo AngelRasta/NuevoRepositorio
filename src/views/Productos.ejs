@@ -12,8 +12,10 @@
     <%- include('partials/navigation') %>
 
     <!-- Video de fondo -->
-    <video id="fondo-video" autoplay muted loop>
-        <source src="/videos/Nike_Jordan_1_Comercial.mp4" type="video/mp4">
+    <video id="fondo-video" autoplay muted loop playsinline>
+        <source src="/src/video/video.mp4" type="video/mp4">
+        <!-- Fallback visual -->
+        <img src="/images/fallback.jpg" alt="Fondo alternativo">
         Tu navegador no soporta el video.
     </video>
 
