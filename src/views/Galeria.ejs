@@ -7,14 +7,53 @@
     <%- include('partials/Styles') %>
 
     <script src="/scripts/vista.js" defer></script>
+
+    <!-- Estilos para el video de fondo -->
+    <style>
+        #fondo-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que el video ocupe todo el fondo */
+            z-index: -1; /* Coloca el video detrás del contenido */
+        }
+
+        /* Estilos para garantizar que el contenido sea visible sobre el video */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff; /* Texto blanco para que sea visible sobre el video */
+        }
+
+        .galeria-lateral {
+            position: relative; /* Asegura que se posicione sobre el video */
+            z-index: 1; /* Garantiza que esté encima del video */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor visibilidad */
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 8px;
+        }
+
+        .galeria-lateral img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Incluir el menú de navegación desde la carpeta partials -->
     <%- include('partials/navigation') %>
 
     <!-- Video de fondo -->
-    <video id="fondo-video" autoplay muted loop>
+    <video id="fondo-video" autoplay muted loop playsinline>
         <source src="/src/video/video.mp4" type="video/mp4">
+        <!-- Fallback visual -->
+        <img src="/images/fallback.jpg" alt="Fondo alternativo">
         Tu navegador no soporta el video.
     </video>
 
@@ -32,6 +71,5 @@
     </section>
 
     <%- include('partials/footer') %>
-
 </body>
 </html>
