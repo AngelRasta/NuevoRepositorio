@@ -9,6 +9,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative; /* Permite manejar la superposición de elementos */
+    overflow-x: hidden; /* Evita scroll horizontal si el video se extiende */
+}
+
+/* Estilos del video de fondo */
+#fondo-video {
+    position: fixed; /* Video fijo como fondo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video ocupe todo el fondo */
+    z-index: -1; /* Coloca el video detrás del contenido */
 }
 
 /* Estilos de los encabezados */
@@ -28,9 +41,12 @@ h1, h2, h3 {
 /* Menú de Navegación */
 header {
     width: 100%;
-    background-color: #333; /* Fondo gris oscuro para el menú */
+    background-color: rgba(51, 51, 51, 0.9); /* Fondo gris oscuro con transparencia */
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed; /* Fija el menú en la parte superior */
+    top: 0;
+    z-index: 10; /* Asegura que el menú esté encima del video */
 }
 
 nav ul {
@@ -128,14 +144,14 @@ button:active {
     justify-content: space-between;
     margin: 20px 0;
     padding: 15px;
-    background-color: #2c2c2c;
+    background-color: rgba(44, 44, 44, 0.8); /* Fondo con opacidad */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .producto {
     margin: 10px;
-    background-color: #444;
+    background-color: rgba(68, 68, 68, 0.9); /* Fondo semitransparente */
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -152,7 +168,7 @@ button:active {
 /* Carrusel y galería lateral */
 .carrusel, .galeria-lateral {
     padding: 20px;
-    background-color: #444;
+    background-color: rgba(68, 68, 68, 0.9); /* Fondo semitransparente */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     margin: 10px 0;
@@ -163,7 +179,7 @@ button:active {
 /* Estilos de Carrito */
 .carrito-contenido {
     padding: 15px;
-    background-color: #2c2c2c;
+    background-color: rgba(44, 44, 44, 0.8); /* Fondo con opacidad */
     border-radius: 8px;
     color: #e0e0e0;
     text-align: center;
@@ -182,35 +198,4 @@ button:active {
 
 .carrito-contenido button:hover {
     background-color: #45a049;
-}
-
-/* Estilos para el video de fondo */
-#fondo-video {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-/* Efectos del menú de navegación */
-nav ul li a {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #555;
-    transform: scale(1.1);  /* Agranda ligeramente el botón */
-}
-
-/* Estilo para el contenedor del menú de navegación */
-nav ul {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    padding: 10px;
-    margin: 0;
-    list-style-type: none;
-    text-align: center;
 }
