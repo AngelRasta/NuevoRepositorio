@@ -10,6 +10,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        /* Fondo oscuro */
+        body {
+            background-color: #1a1a1a; /* Fondo oscuro */
+            color: #f8f9fa; /* Texto claro */
+        }
+
+        h2 {
+            color: #f8f9fa; /* Título en color claro */
+        }
+
         /* Animación para el efecto de despliegue */
         .info-overlay {
             opacity: 0; /* Oculto por defecto */
@@ -18,6 +28,24 @@
 
         .image-container:hover .info-overlay {
             opacity: 1; /* Mostrar información al pasar el cursor */
+        }
+
+        .carousel-item img {
+            max-height: 400px;
+            object-fit: cover; /* Asegura que la imagen cubra completamente el área */
+        }
+
+        /* Estilo de la superposición de texto */
+        .info-overlay {
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro translúcido */
+            color: #f8f9fa; /* Texto blanco */
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Botones de control del carrusel */
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: #f8f9fa; /* Color claro para los íconos */
         }
     </style>
 
@@ -30,14 +58,13 @@
     <!-- Video de fondo -->
     <video id="fondo-video" autoplay muted loop playsinline>
         <source src="src/Video/video.mp4" type="video/mp4">
-        <!-- Fallback visual -->
         <img src="/images/fallback.jpg" alt="Fondo alternativo">
         Tu navegador no soporta el video.
     </video>
 
     <!-- Título y Carrusel -->
     <section class="container text-center mt-5">
-        <h2 class="text-light">Datos curiosos del mundo del sneaker</h2>
+        <h2>Datos curiosos del mundo del sneaker</h2>
         <div id="sneakerCarousel" class="carousel slide mt-3" data-bs-ride="carousel">
             <!-- Indicadores del carrusel -->
             <div class="carousel-indicators">
@@ -54,7 +81,7 @@
                 <div class="carousel-item active">
                     <div class="image-container position-relative">
                         <img src="/images/sneaker1.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 1">
-                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                        <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 1: Este modelo rompió récords de ventas en 2022.</p>
                         </div>
                     </div>
@@ -62,7 +89,7 @@
                 <div class="carousel-item">
                     <div class="image-container position-relative">
                         <img src="/images/sneaker2.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 2">
-                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                        <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 2: Inspirado en los años 80.</p>
                         </div>
                     </div>
@@ -70,7 +97,7 @@
                 <div class="carousel-item">
                     <div class="image-container position-relative">
                         <img src="/images/sneaker3.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 3">
-                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                        <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 3: Popular entre atletas profesionales.</p>
                         </div>
                     </div>
@@ -78,7 +105,7 @@
                 <div class="carousel-item">
                     <div class="image-container position-relative">
                         <img src="/images/sneaker4.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 4">
-                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                        <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 4: Usado en una película famosa.</p>
                         </div>
                     </div>
@@ -86,7 +113,7 @@
                 <div class="carousel-item">
                     <div class="image-container position-relative">
                         <img src="/images/sneaker5.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 5">
-                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                        <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 5: Edición limitada de solo 100 pares.</p>
                         </div>
                     </div>
@@ -94,7 +121,7 @@
                 <div class="carousel-item">
                     <div class="image-container position-relative">
                         <img src="/images/sneaker6.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 6">
-                        <div class="info-overlay text-light bg-dark p-2 position-absolute bottom-0 w-100">
+                        <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 6: Fabricado con materiales reciclados.</p>
                         </div>
                     </div>
@@ -113,9 +140,11 @@
         </div>
     </section>
 
-     <%- include('partials/footer') %>
+    <!-- Incluir el footer -->
+    <%- include('partials/footer') %>
 
     <!-- Scripts de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
