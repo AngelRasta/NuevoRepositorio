@@ -9,8 +9,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centrado vertical en pantallas */
     position: relative; /* Permite manejar la superposición de elementos */
     overflow-x: hidden; /* Evita scroll horizontal si el video se extiende */
+    min-height: 100vh; /* Asegura el centrado en monitores horizontales */
 }
 
 /* Estilos del video de fondo */
@@ -199,3 +201,44 @@ button:active {
 .carrito-contenido button:hover {
     background-color: #45a049;
 }
+
+/* Adaptador para dispositivos móviles */
+@media (max-width: 768px) {
+    .categoria {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .producto {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .section {
+        width: 90%;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 1.5em;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+

@@ -30,9 +30,24 @@
             opacity: 1; /* Mostrar información al pasar el cursor */
         }
 
+        /* Asegura que todas las imágenes del carrusel sean uniformes */
         .carousel-item img {
-            max-height: 400px;
-            object-fit: cover; /* Asegura que la imagen cubra completamente el área */
+            width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+            height: 600px; /* Altura fija para imágenes grandes */
+            object-fit: cover; /* Escala y recorta las imágenes sin deformarlas */
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 400px; /* Ajusta la altura para pantallas más pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-item img {
+                height: 250px; /* Ajusta la altura para pantallas muy pequeñas */
+            }
         }
 
         /* Estilo de la superposición de texto */
@@ -79,7 +94,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="image-container position-relative">
-                        <img src="/images/sneaker1.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 1">
+                        <img src="/imagenes/a.jfif" class="d-block w-100 img-thumbnail" alt="Sneaker 1">
                         <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 1: Este modelo rompió récords de ventas en 2022.</p>
                         </div>
@@ -87,7 +102,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="image-container position-relative">
-                        <img src="/images/sneaker2.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 2">
+                        <img src="/imagenes/b.jfif" class="d-block w-100 img-thumbnail" alt="Sneaker 2">
                         <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 2: Inspirado en los años 80.</p>
                         </div>
@@ -95,7 +110,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="image-container position-relative">
-                        <img src="/images/sneaker3.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 3">
+                        <img src="/imagenes/c.jfif" class="d-block w-100 img-thumbnail" alt="Sneaker 3">
                         <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 3: Popular entre atletas profesionales.</p>
                         </div>
@@ -103,7 +118,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="image-container position-relative">
-                        <img src="/images/sneaker4.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 4">
+                        <img src="/imagenes/d.jfif" class="d-block w-100 img-thumbnail" alt="Sneaker 4">
                         <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 4: Usado en una película famosa.</p>
                         </div>
@@ -111,7 +126,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="image-container position-relative">
-                        <img src="/images/sneaker5.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 5">
+                        <img src="/imagenes/e.jfif" class="d-block w-100 img-thumbnail" alt="Sneaker 5">
                         <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 5: Edición limitada de solo 100 pares.</p>
                         </div>
@@ -119,7 +134,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="image-container position-relative">
-                        <img src="/images/sneaker6.jpg" class="d-block w-100 img-thumbnail" alt="Sneaker 6">
+                        <img src="/imagenes/f.jfif" class="d-block w-100 img-thumbnail" alt="Sneaker 6">
                         <div class="info-overlay position-absolute bottom-0 w-100">
                             <p>Dato curioso sobre Sneaker 6: Fabricado con materiales reciclados.</p>
                         </div>
