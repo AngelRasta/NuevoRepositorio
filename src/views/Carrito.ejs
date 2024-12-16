@@ -6,6 +6,59 @@
     <title><%= title %></title>
     <%- include('partials/Styles') %>
     <script src="/scripts/vista.js" defer></script>
+
+    <style>
+        /* Estilos básicos para el carrito */
+        .carrito-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .carrito-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .carrito-item .info {
+            flex: 1;
+        }
+
+        .carrito-item button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .carrito-item button:hover {
+            background-color: #c0392b;
+        }
+
+        .total {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .boton-continuar {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .boton-continuar:hover {
+            background-color: #27ae60;
+        }
+    </style>
 </head>
 <body>
     <!-- Incluir el menú de navegación desde la carpeta partials -->
@@ -13,7 +66,7 @@
 
     <!-- Video de fondo -->
     <video id="fondo-video" autoplay muted loop>
-        <source src="/video/Nike_Jordan_1_Comercial.mp4" type="video/mp4">
+        <source src="/videos/fondo.mp4" type="video/mp4">
         Tu navegador no soporta el video.
     </video>
 
@@ -23,16 +76,54 @@
             <h2>Carrito de Compras</h2>
             <div class="carrito-contenido">
                 <!-- Aquí se cargará dinámicamente el contenido del carrito -->
-                <!-- El contenido se manejará a través de JavaScript -->
+                <% carrito.forEach((producto, index) => { %>
+                    <div class="carrito-item">
+                        <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+                        <div class="info">
+                            <p><strong><%= producto.nombre %></strong></p>
+                            <p>Precio: $<%= producto.precio %></p>
+                        </div>
+                        <form action="/eliminar" method="POST">
+                            <input type="hidden" name="index" value="<%= index %>">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </div>
+                <% }); %>
             </div>
+
+            <!-- Total de la compra -->
+            <div class="total">
+                <% let totalSinIva = 0; %>
+                <% carrito.forEach(producto => { totalSinIva += parseFloat(producto.precio); }); %>
+                <% let iva = totalSinIva * 0.16; %>
+                <% let totalConIva = totalSinIva + iva; %>
+                <p>Total (sin IVA): $<%= totalSinIva.toFixed(2) %></p>
+                <p>IVA (16%): $<%= iva.toFixed(2) %></p>
+                <p>Total con IVA: $<%= totalConIva.toFixed(2) %></p>
+            </div>
+
+            <!-- Botón para continuar con la compra -->
+            <button class="boton-continuar" onclick="continuarCompra()">Continuar con la compra</button>
         </section>
-        <!-- Botón de ejemplo para agregar un producto (esto es opcional) -->
-        <button id="agregar-producto" onclick="agregarProducto({nombre: 'Tenis Nike', precio: 100})">
-            Agregar Tenis Nike al Carrito
-        </button>
+
+        <!-- Botón de ejemplo para agregar un producto -->
+        <form action="/agregar" method="POST">
+            <input type="hidden" name="nombre" value="Tenis Nike">
+            <input type="hidden" name="precio" value="100">
+            <input type="hidden" name="imagen" value="/images/tenis-nike.jpg">
+        </form>
     </main>
 
     <%- include('partials/footer') %>
+
+    <script>
+        // Función para continuar con la compra (puedes agregar la funcionalidad de redirección aquí)
+        function continuarCompra() {
+            alert('Continuando con la compra...');
+            // Aquí puedes redirigir a la página de pago, por ejemplo:
+            // window.location.href = '/pago';
+        }
+    </script>
 
 </body>
 </html>
